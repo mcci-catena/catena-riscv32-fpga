@@ -1,0 +1,7 @@
+---
+sourcepath: ../../../../src
+
+sources:
+  - riscv32i_v6T/riscv32_core.v
+
+top:  riscv32_core

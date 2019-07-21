@@ -1,0 +1,117 @@
+//
+// Module:  DESIGN_sbt.project
+//
+// Function:
+//	project template -- expand with ../new-design.sh.
+//
+//	DESIGN is the name of the target design.
+// 	TOPLEVEL is the name of the top level unit.
+//	BOARD is the name of the board.
+//
+// Copyright notice:
+//	Copyright 2018-2019 MCCI Corporation
+//
+//	This file is part of the MCCI Catena RISC-V FPGA core,
+//	https://github.com/mcci-catena/catena-riscv32-fpga.
+//
+//	catena-risc32v-fpga is free software: you can redistribute it
+//	and/or modify it under the terms of the GNU General Public License
+//	as published by the Free Software Foundation, either version 3 of
+//	the License, or (at your option) any later version.
+//
+//	catena-risc32v-fpga is distributed in the hope that it will
+//	be useful, but WITHOUT ANY WARRANTY; without even the implied
+//	warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+//	See the GNU General Public License for more details.
+//
+//	You should have received a copy of the GNU General Public License
+//	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+[Project]
+ProjectVersion=2.0
+Version=Lattice Semiconductor Corporation iCEcube - Release: 2017.01.27914 - Build Date: Jan 12 2017 19:10:45
+ProjectName=${DESIGN}
+Vendor=SiliconBlue
+Synthesis=synplify
+ProjectVFiles=../../../src/lib/riscv32i_v6T/riscv32.v=work,../../../src/boards/${BOARD}/${TOPLEVEL}.v=work,../../../src/lib/common/irom_loader.v=work,../../../src/lib/common/simple_uart.v=work,../../../src/lib/common/simple_uart_rx.v=work,../../../src/lib/pdm_audio/pdm_audio.v=work,../../../src/lib/pdm_audio/pdm_audio_clk.v=work,../../../src/lib/pdm_audio/pdm_audio_data.v=work,../../../src/lib/pdm_audio/pdm_filter.v=work
+ProjectCFiles=${DESIGN}.sdc
+CurImplementation=${DESIGN}_Implmnt
+Implementations=${DESIGN}_Implmnt
+StartFromSynthesis=yes
+IPGeneration=false
+
+[${DESIGN}_Implmnt]
+DeviceFamily=iCE40UP
+Device=5K
+DevicePackage=SG48
+DevicePower=
+NetlistFile=${DESIGN}_Implmnt/${DESIGN}.edf
+AdditionalEDIFFile=
+IPEDIFFile=
+DesignLib=${DESIGN}_Implmnt/sbt/netlist/oadb-${TOPLEVEL}
+DesignView=_rt
+DesignCell=${TOPLEVEL}
+SynthesisSDCFile=${DESIGN}_Implmnt/${DESIGN}.scf
+UserPinConstraintFile=
+UserSDCFile=
+PhysicalConstraintFile=${DESIGN}_pcf_sbt.pcf
+BackendImplPathName=
+Devicevoltage=1.14
+DevicevoltagePerformance=+/-5%(datasheet default)
+DeviceTemperature=85
+TimingAnalysisBasedOn=Worst
+OperationRange=Commercial
+TypicalCustomTemperature=25
+WorstCustomTemperature=85
+BestCustomTemperature=0
+IOBankVoltages=topBank,2.5 bottomBank,2.5
+derValue=1.32445
+TimingPathNumberStick=0
+
+[lse options]
+CarryChain=True
+CarryChainLength=0
+CommandLineOptions=
+EBRUtilization=100.00
+FSMEncodingStyle=Auto
+FixGatedClocks=True
+I/OInsertion=True
+IntermediateFileDump=False
+LoopLimit=1950
+MaximalFanout=10000
+MemoryInitialValueFileSearchPath=
+NumberOfCriticalPaths=3
+OptimizationGoal=Area
+PropagateConstants=True
+RAMStyle=Auto
+ROMStyle=Auto
+RWCheckOnRam=False
+RemoveDuplicateRegisters=True
+ResolvedMixedDrivers=False
+ResourceSharing=True
+TargetFrequency=
+TopLevelUnit=
+UseIORegister=Auto
+VHDL2008=False
+VerilogIncludeSearchPath=
+
+[tool options]
+PlacerEffortLevel=std
+PlacerAutoLutCascade=yes
+PlacerAutoRamCascade=yes
+PlacerPowerDriven=no
+PlacerAreaDriven=no
+RouteWithTimingDriven=yes
+RouteWithPinPermutation=yes
+BitmapSPIFlashMode=yes
+BitmapRAM4KInit=yes
+BitmapInitRamBank=1111
+BitmapOscillatorFR=low
+BitmapEnableWarmBoot=yes
+BitmapDisableHeader=no
+BitmapSetSecurity=no
+BitmapSetNoUsedIONoPullup=no
+FloorPlannerShowFanInNets=yes
+FloorPlannerShowFanOutNets=yes
+HookTo3rdPartyTextEditor=no
+

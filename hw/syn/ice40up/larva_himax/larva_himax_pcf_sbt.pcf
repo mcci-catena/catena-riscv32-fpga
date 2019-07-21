@@ -1,0 +1,55 @@
+################################################################################
+#
+# Name: larva_mdp_c_pcf_sbt.pcf
+#
+# Function:
+#	iCEcube PCF specifying pin locations when using this core on the
+#	Himax camera FPGA demo board.
+#
+# Version:            2016.02.27810
+#
+# File Generated:     Feb 21 2017 12:00:30
+#
+# Family & Device:    iCE40UP5K
+#
+# Package:            SG48
+#
+################################################################################
+
+####
+#### The Himax device doesn't bring the SPI pins
+#### of the iCE40UP to the connectors. So we need to route
+#### the SPI outputs differently on the Himax. This can be done
+#### in a transparent way, but... that's the next step.
+#### Need to connect C_SCK, C_MOSI, C_MISO
+####
+
+#       Verilog     Pkg     Schematic    Conn     External name  Catena
+#       -------     ---     ---------    ----     -------------  ------
+set_io 	uart_rx     18    # IOT_31B:     JP1.19   UART1_RX        n/a
+set_io 	uart_tx     19    # IOT_29B:     JP1.17   UART1_TX        n/a
+set_io  i2c_scl_pin 38    # CAM_DAT4     JP2.13   C_I2C_SCL      P1.19
+set_io  i2c_sda_pin 36    # CAM_DAT2     JP2.11   C_I2C_SDA      P1.17
+
+set_io  gpio_pin[0] 26    # CAM_VSYNC    JP2.18   C_CS           P1.16
+set_io  gpio_pin[1] 31    # CAM_DAT7     JP2.16   C_NRST         P1.14
+set_io  gpio_pin[2] 37    # CAM_MCLK     JP2.20   C_DIO1         P1.18
+set_io  gpio_pin[3] 28    # CAM_TRIG     JP2.19   C_IRQ          P1.20
+set_io  gpio_pin[4] 42    # CAM_DAT6     JP2.15   C_DIO2         P1.22
+set_io  gpio_pin[5] 15    # CAM_DAT0     JP2.9    C_SPARE_C4     P1.15
+set_io  gpio_pin[6] 34    # CAM_HREF     JP2.17   C_SPARE_C5     P1.21
+set_io  lora_spi_sck 23   # CAM_DAT1     JP1.10   C_SCK          P1.6
+set_io  lora_spi_mosi 25  # CAM_DAT3     JP1.12   C_MOSI         P1.8
+set_io  lora_spi_miso 43  # CAM_DAT5     JP1.14   C_MISO         P1.10
+
+### these are routed to the on-board FTDI device
+set_io  uart1_rx    20    # RXD:         n/a
+set_io  uart1_tx    21    # TXD:         n/a
+
+# these can't be changed, as they're dedicated I/Os for the bootloader
+set_io  SPI_SS      16    # SPI_SS:      n/a
+set_io  SPI_SCK     15    # SPI_SCLK:    n/a
+set_io  SPI_SI      17    # SPI_MOSI:    n/a
+set_io  SPI_SO      14    # SPI_MISO:    n/a
+
+### end of file ###

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<c:Diagram
+xmlns:c="http://www.cadifra.com/schema/1.0"
+xmlns:c1v3="http://www.cadifra.com/schema/1.3"
+ProductVersion="1.3.3">
+
+<Page id="r1"
+Size="1"
+Width="21590"
+Height="27940"
+Rows="1"
+Columns="1"
+Margins="1016 1016 1016 1016"
+CutGlueMargins="1016 1016 1016 1016"
+Scale="1"/>
+
+<DiagramType id="r2"
+TypeValue="5"/>
+
+<Style id="r3">
+<dir n="Base" Typeface="arial" Size="11" Bold="0">
+<dir n="Free Text" Size="10" Bold="0"/>
+<dir n="State Diagram">
+<dir n="State" Bold="0">
+<dir n="Compartment" Size="8"/>
+<dir n="Header" Bold="1"/>
+</dir>
+<dir n="Transition" Bold="0"/>
+</dir>
+</dir>
+</Style>
+
+<InitialState id="r4"
+Pos="9700 -3500"/>
+
+<State id="r5"
+Pos="8900 -4800"
+Size="2000 1000">
+<Text>stInitial</Text>
+</State>
+
+<Transition id="r6">
+<End id="r7"
+Pos="9900 -3900"
+State="r4"
+Type="1"/>
+<Segment id="r8"/>
+<End id="r9"
+Pos="9900 -4800"
+State="r5"
+Type="2"/>
+</Transition>
+
+<State id="r10"
+Pos="6100 -8700"
+Size="2200 1000">
+<Text>stSyncing</Text>
+</State>
+
+<Transition id="r11">
+<End id="r28"
+Pos="9900 -5800"
+State="r5"
+Type="1"/>
+<Segment id="r12"/>
+<End id="r13"
+Pos="9900 -6600"
+State="r14"
+Type="2"/>
+</Transition>
+
+<State id="r14"
+Pos="9000 -6600"
+Size="2000 1000">
+<Text>stIdle</Text>
+</State>
+
+<Transition id="r15">
+<End id="r16"
+Pos="7500 -8700"
+State="r10"
+Type="1"/>
+<Segment id="r17"
+Oblique="1">
+<Anchor id="r18"
+Pos="8531.25 -7600">
+<FreeText id="r19"
+Pos="7963 -7384"
+Origin="2">
+<Text>on succesful transmission</Text>
+</FreeText>
+</Anchor>
+</Segment>
+<End id="r29"
+Pos="9000 -7100"
+State="r14"
+Type="2"/>
+</Transition>
+
+<State id="r20"
+Pos="11600 -8700"
+Size="2300 1000">
+<Text>stUpdating</Text>
+</State>
+
+<Transition id="r21">
+<End id="r30"
+Pos="11000 -7300"
+State="r14"
+Type="1"/>
+<Segment id="r22"
+Oblique="1"/>
+<End id="r23"
+Pos="12200 -8700"
+State="r20"
+Type="2"/>
+</Transition>
+
+<Transition id="r24">
+<End id="r25"
+Pos="11600 -8900"
+State="r20"
+Type="1"/>
+<Segment id="r26"
+Oblique="1"/>
+<End id="r27"
+Pos="10600 -7600"
+State="r14"
+Type="2"/>
+</Transition>
+
+<Transition id="r31">
+<End id="r32"
+Pos="9200 -7600"
+State="r14"
+Type="1"/>
+<Segment id="r33"
+Oblique="1"/>
+<End id="r34"
+Pos="8273.2050807568885 -8800"
+State="r10"
+Type="2"/>
+</Transition>
+
+</c:Diagram>

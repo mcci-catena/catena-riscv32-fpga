@@ -1,0 +1,72 @@
+################################################################################
+#
+# iCEcube PCF for catena4710-riscv
+#
+# Family & Device:    iCE40UP5K
+#
+# Package:            SG48
+#
+# PCBA:               MCCI Catena 4710 rev A
+#
+################################################################################
+
+#        Verilog          Pkg     Schematic       Conn          Comments
+#        -------          ---     ---------       ----          --------
+
+#### First, the pins from the right side of U1 , top to bottom ####
+ set_io  SPI_SI           17    # FLASH_MISO      JP1-5         these can't be changed,
+ set_io  SPI_SS           16    # FLASH_NSS:      JP1-7           as they're dedicated
+ set_io  SPI_SCK          15    # FLASH_SCK       JP1-6           I/Os for the
+ set_io  SPI_SO           14    # FLASH_MOSI      JP1-4           bootloader.
+
+ set_io  wire_D[16]        6    # A2              JP1-10        A2 / D16
+ set_io  wire_D[17]       10    # A3              JP1-9         A3 / D17
+ set_io  wire_D[18]       11    # A4              JP1-8         A4 / D18
+
+ set_io  wire_D[29]       18    # D29_SD_MIC      n/a
+ set_io  wire_D[28]       19    # D28_SCK_MIC     n/a
+
+ set_io  wire_D[2]         9    # D2              JP5-3
+ set_io  wire_D[9]        13    # D9              JP3-8
+ set_io  uart1_tx         21    # D1_TX           JP1-2         D1_TX
+ set_io  wire_D[5]        12    # D5              JP3-10
+ set_io  uart1_rx         20    # D0_RX           JP1-3         D0_RX
+
+ set_io  wire_D[15]        4    # A1              JP1-11
+ set_io  wire_D[14]        3    # A0 / D14        JP1-12
+
+ set_io  pin_usbp         46    # D_P             USB D+
+ set_io  pin_usbm         45    # D_N             USB D-
+
+ set_io  gpio_pin[5]      47    # D7 / VEN-2      JP5-VOUT_2
+ set_io  pin_clk12        44    # Clk
+ set_io  gpio_pin[6]      48    # D25 / VEN-1     JP4-VOUT_1
+
+ set_io  wire_D[32]        2    # D32             JP3-14
+
+#### second, the pins from the left side of U1, top to bottom ####
+ set_io  lora_spi_sck     23    # RF_SCK          -             RF_SCK
+ set_io  lora_spi_mosi    25    # RF_MOSI         -             RF_MOSI
+ set_io  gpio_pin[0]      26    # D8_RF_CS        -             RF_CS
+ set_io  wire_D[11]       27    # D11             JP3-6
+ set_io  gpio_pin[4]      32    # D27_DIO2        -             RF_DIO2
+ set_io  gpio_pin[1]      31    # D4_RF_RST       -             D4_RF_RST
+ set_io  gpio_pin[2]      37    # D6_DIO1         JP3-9         RF_DIO1
+
+ set_io  wire_D[12]       34    # D12             JP3-5
+
+ set_io  lora_spi_miso    43    # RF_MISO         -             RF_MISO
+
+ set_io  i2c_sda_pin      36    # SDA             JP3-12
+ set_io  wire_D[10]       42    # D10             JP3-7
+ set_io  i2c_scl_pin      38    # SCL             JP3-11
+
+ set_io  gpio_pin[3]      28    # D3_IRQ          -             RF_IRQ
+
+ set_io  wire_D[30]       39    # D30             JP4-2         RGB0
+ set_io  wire_D[31]       40    # D31             JP4-3         RGB1
+ set_io  wire_D[26]       41    # D26             JP5-2         RGB2
+
+ set_io  wire_D[13]       35    # D13_LED         JP3-4
+
+### end of file

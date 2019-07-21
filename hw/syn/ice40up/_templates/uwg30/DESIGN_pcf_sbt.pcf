@@ -1,0 +1,54 @@
+//
+// Module:  DESIGN_pcf_sbt.project
+//
+// Function:
+//	Project-constraint-file template -- expand with ../new-design.sh.
+//
+//	DESIGN is the name of the target design.
+//
+// Copyright notice:
+//	Copyright 2018-2019 MCCI Corporation
+//
+//	This file is part of the MCCI Catena RISC-V FPGA core,
+//	https://github.com/mcci-catena/catena-riscv32-fpga.
+//
+//	catena-risc32v-fpga is free software: you can redistribute it
+//	and/or modify it under the terms of the GNU General Public License
+//	as published by the Free Software Foundation, either version 3 of
+//	the License, or (at your option) any later version.
+//
+//	catena-risc32v-fpga is distributed in the hope that it will
+//	be useful, but WITHOUT ANY WARRANTY; without even the implied
+//	warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+//	See the GNU General Public License for more details.
+//
+//	You should have received a copy of the GNU General Public License
+//	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+################################################################################
+#
+# iCEcube PCF for ${DESIGN}
+#
+# Family & Device:    iCE40UP5K
+#
+# Package:            UWG30
+#
+################################################################################
+
+###IOSet List 14
+set_io gpio1_pin C3
+set_io gpio0_pin B1
+
+set_io gpio2_pin F2
+set_io gpio3_pin E3
+set_io gpio4_pin F4
+set_io SPI_SS C1
+set_io SPI_SCK D1
+set_io SPI_SI E1
+set_io SPI_SO F1
+set_io i2c_scl_pin F5
+set_io i2c_sda_pin D5
+set_io uart1_tx A1
+set_io uart1_rx A2
+set_io uart_tx E4
+set_io uart_rx E5

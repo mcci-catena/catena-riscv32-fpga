@@ -1,0 +1,41 @@
+################################################################################
+#
+# Name: larva_mdp_c_pcf_sbt.pcf
+#
+# Function:
+#	iCEcube PCF specifying pin locations when using this core on FPGA "C"
+#	of the Lattice Mobile Development Platform.
+#
+# Version:            2016.02.27810
+#
+# File Generated:     Feb 21 2017 12:00:30
+#
+# Family & Device:    iCE40UP5K
+#
+# Package:            UWG30
+#
+################################################################################
+
+###IOSet List 14
+
+set_io gpio_pin[1] C3	# "SPARE_C0"		Jx-14	"NRST"
+set_io gpio_pin[0] B1	# "SPARE_C1"		Jx-16	"CS"
+
+set_io gpio_pin[2] F2	# "SPARE_C2"		Jx-18	"DIO1"
+set_io gpio_pin[3] E3	# "proc_intr_C"		Jx-20	"IRQ"
+set_io gpio_pin[4] F4	# "SPARE_C3"		Jx-22	"DIO2"
+
+# these can't be changed, as they're dedicated I/Os for the bootloader
+set_io SPI_SS C1	# "ICE_SS_C"		Jx-4	n/c
+set_io SPI_SCK D1	# "ICE_SCK_C"		Jx-6	"SCK"
+set_io SPI_SI E1	# "ICE_SI_C"		Jx-8	"MOSI"
+set_io SPI_SO F1	# "ICE_SO_C"		Jx-10	"MISO"
+
+set_io i2c_scl_pin F5	# "I2C_sensor_SCL"	Jx-19	"I2C_SCL"
+set_io i2c_sda_pin D5	# "I2C_sensor_SDA"	Jx-19	"I2C_SDA"
+set_io uart1_tx A1	# "UART_TX_C"		Jx-3	"UART_TX"
+set_io uart1_rx A2	# "UART_RX_C"		Jx-1	"UART_RX"
+set_io uart_tx E4	# "SPARE_C4"		Jx-15	"SPARE_C4"
+set_io uart_rx E5	# "SPARE_C5"		Jx-21	"SPARE_C5"
+
+### end of file ###

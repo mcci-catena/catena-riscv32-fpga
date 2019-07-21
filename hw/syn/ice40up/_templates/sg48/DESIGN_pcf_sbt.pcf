@@ -1,0 +1,86 @@
+//
+// Module:  DESIGN_pcf_sbt.project
+//
+// Function:
+//	Project-constraint-file template -- expand with ../new-design.sh.
+//
+//	DESIGN is the name of the target design.
+//
+// Copyright notice:
+//	Copyright 2018-2019 MCCI Corporation
+//
+//	This file is part of the MCCI Catena RISC-V FPGA core,
+//	https://github.com/mcci-catena/catena-riscv32-fpga.
+//
+//	catena-risc32v-fpga is free software: you can redistribute it
+//	and/or modify it under the terms of the GNU General Public License
+//	as published by the Free Software Foundation, either version 3 of
+//	the License, or (at your option) any later version.
+//
+//	catena-risc32v-fpga is distributed in the hope that it will
+//	be useful, but WITHOUT ANY WARRANTY; without even the implied
+//	warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+//	See the GNU General Public License for more details.
+//
+//	You should have received a copy of the GNU General Public License
+//	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+################################################################################
+#
+# iCEcube PCF for ${DESIGN}
+#
+# Family & Device:    iCE40UP5K
+#
+# Package:            SG48
+#
+################################################################################
+
+###IOSet List 13
+set_io uart1_tx 21
+set_io uart1_rx 20
+
+# this is the embedded flash SS.
+set_io SPI_SS 16
+
+# SPI_SCK == C_SCK
+set_io SPI_SCK 23
+
+# SPI_SI == C_MOSI
+set_io SPI_SI 25
+
+# SPI_SO == C_MISO
+set_io SPI_SO 43
+
+# i2c_scl_pin == C_I2C_SCL
+set_io i2c_scl_pin 38
+
+# i2c_sda_pin == C_I2C_SDA
+set_io i2c_sda_pin 38
+
+# gpio1_pin == C_NRST
+set_io gpio1_pin 31
+
+# gpio0_pin == C_CS
+# set_io gpio0_pin 26
+
+### debug: send to LED2 / D6
+set_io gpio0_pin 10
+
+# gpio2_pin == C_DIO1
+set_io gpio2_pin 31
+
+# gpio3_pin == C_IRQ
+set_io gpio3_pin 28
+
+# gpio4_pin == C_DIO2
+### FIXME
+set_io gpio4_pin 34
+
+# gpio5_pin == C_SPARE_C4
+# set_io gpio5_pin 34
+
+# gpio6_pin == C_SPARE_C5
+# set_io gpio6_pin 42
+
+# debugclk == LED4 == D2
+set_io debugclk 12

@@ -1,0 +1,48 @@
+################################################################################
+#
+# iCEcube PCF for larva_bb
+#
+# Family & Device:    iCE40UP5K
+#
+# Package:            SG48
+#
+################################################################################
+
+####
+#### The Himax device doesn't bring the SPI pins
+#### of the iCE40UP to the connectors. For testing
+#### on the breadboard, we want to follow the Himax.
+#### So we need to route the SPI outputs differently
+###  than on the MDP. This can be done
+#### in a transparent way, but... that's the next step.
+#### Need to connect C_SCK, C_MOSI, C_MISO
+####
+
+#       Verilog     Pkg     Schematic    Conn     External name  Catena
+#       -------     ---     ---------    ----     -------------  ------
+set_io  uart_rx     43    # IOT_49A      J2.19    UART0_RX
+set_io  uart_tx     34    # IOT_44B      J2.17    UART0_TX
+set_io  uart1_rx    2     # IOB_6A       J3.17    UART1_RX
+set_io  uart1_tx    46    # IOB_0A       J3.15    UART1_TX
+
+set_io  i2c_scl_pin 47    # IOB_2A       J3.11    C_I2C_SCL       P1.19
+set_io  i2c_sda_pin 45    # IOB_5B       J3.9     C_I2C_SDA       P1.17
+set_io  gpio_pin[0] 18    # IOB_31B      J3.12    C_CS            P1.16
+set_io  gpio_pin[1] 19    # IOB_29B      J3.10    C_NRST          P1.14
+set_io  gpio_pin[2] 11    # IOB_20A      J3.14    C_DIO1          P1.18
+set_io  gpio_pin[3] 10    # IOB_18A      J3.16    C_IRQ           P1.20
+set_io  gpio_pin[4] 9     # IOB_16A      J3.18    C_DIO2          P1.22
+set_io  gpio_pin[5] 48    # IOB_4A       J3.7     C_SPARE_C4      P1.15
+set_io  gpio_pin[6] 44    # IOB_3B_G6    J3.13    C_SPARE_C5      P1.21
+set_io  lora_spi_sck  12  # IOB_22A      J3.2     C_SCK           P1.6
+set_io  lora_spi_mosi 21  # IOB_23B      J3.4     C_MOSI          P1.8
+set_io  lora_spi_miso 13  # IOB_24A      J3.6     C_MISO          P1.10
+
+
+# SPI_SS hardwired to flash; used by boot. Using split form to mimic Himax
+set_io  SPI_SS      16
+set_io  SPI_SCK     15
+set_io  SPI_SI      17
+set_io  SPI_SO      14
+
+### end of file ###

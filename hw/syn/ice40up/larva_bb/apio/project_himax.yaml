@@ -1,0 +1,41 @@
+---
+sourcepath: ../../../../src
+
+sources:
+  - lora_himax_iCE40UP.v
+  - riscv32i_v6T/riscv32.v
+  - hera_wrap.v
+  - hera/hera.v
+  - hera/aludp.v
+  - hera/aluop.v
+  - hera/DW02_mac.v
+  - hera/mpiasbctl.v
+  - hera/mpimskctl.v
+  - hera/mpimulctl.v
+  - hera/mpisftctl.v
+  - hera/mpiunit.v
+  - hera/pfalu.v
+  - hera/pfasbctl.v
+  - hera/pfinvctl.v
+  - hera/pfrdcctl.v
+  - hera/pfunit.v
+  - hera/rgrp.v
+  - extif.v
+  - hdcp20/hdcp20_trng/src/rtl/hdcp20_trng.v
+  - hdcp20/ring_osc/src/rtl/ring_osc.v
+  - hdcp20/ring_osc/src/rtl/ring_osc_en.v
+  - hdcp20/ring_osc/src/struct_xilinx/ring_osc3.v
+  - hdcp20/ring_osc/src/struct_xilinx/ring_osc5.v
+  - hdcp20/ring_osc/src/struct_xilinx/ring_osc7.v
+  - hdcp20/rng/src/rtl/rng.v
+  - hdcp20/simg_lib/src/rtl/AND2.v
+  - hdcp20/simg_lib/src/rtl/SIMG_LIB.v
+  - aes128_acc.v
+  - irom_loader.v
+  - simple_uart.v
+  - simple_uart_rx.v
+  - pulse.v
+  - rf32x512_beh.v
+
+top:
+  lora_himax_iCE40UP

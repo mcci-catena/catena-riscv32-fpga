@@ -1,0 +1,80 @@
+#--  Synopsys, Inc.
+#--  Version L-2016.09L+ice40
+#--  Project file C:\mcci\client\lancaster\lora-mdp-devel\fpga\hw\syn\ice40up\catena4710-riscv\catena4710-riscv_syn.prj
+#--  Written on Sun Dec 23 10:11:35 2018
+
+
+#project files
+
+
+
+add_file -verilog -lib work "../../../src/lib/riscv32i_v6T/riscv32.v" 
+add_file -verilog -lib work "../../../src/boards/Catena4710/catena4710_top.v" 
+add_file -verilog -lib work "../../../src/lib/common/irom_loader.v" 
+add_file -verilog -lib work "../../../src/lib/common/simple_uart.v" 
+add_file -verilog -lib work "../../../src/lib/common/simple_uart_rx.v" 
+add_file -verilog -lib work "../../../src/lib/pdm_audio/pdm_audio.v" 
+add_file -verilog -lib work "../../../src/lib/pdm_audio/pdm_audio_clk.v" 
+add_file -verilog -lib work "../../../src/lib/pdm_audio/pdm_audio_data.v" 
+add_file -verilog -lib work "../../../src/lib/pdm_audio/pdm_filter.v" 
+add_file -constraint -lib work "catena4710-riscv.sdc"
+#implementation: "catena4710-riscv_Implmnt"
+impl -add catena4710-riscv_Implmnt -type fpga
+
+#
+#implementation attributes
+
+set_option -vlog_std v2001
+set_option -project_relative_includes 1
+set_option -include_path {../../../src/lib/i/}
+
+#device options
+set_option -technology SBTiCE40UP
+set_option -part iCE40UP5K
+set_option -package SG48
+set_option -speed_grade 
+set_option -part_companion ""
+
+#compilation/mapping options
+
+# hdl_compiler_options
+set_option -distributed_compile 0
+
+# mapper_without_write_options
+set_option -frequency auto
+set_option -srs_instrumentation 1
+
+# mapper_options
+set_option -write_verilog 0
+set_option -write_vhdl 0
+
+# Lattice iCE40UP
+set_option -maxfan 10000
+set_option -rw_check_on_ram 0
+set_option -disable_io_insertion 0
+set_option -pipe 1
+set_option -retiming 0
+set_option -update_models_cp 0
+set_option -fix_gated_and_generated_clocks 1
+set_option -run_prop_extract 1
+
+# NFilter
+set_option -no_sequential_opt 0
+
+# sequential_optimization_options
+set_option -symbolic_fsm_compiler 1
+
+# Compiler Options
+set_option -compiler_compatible 0
+set_option -resource_sharing 1
+
+# Compiler Options
+set_option -auto_infer_blackbox 0
+
+#automatic place and route (vendor) options
+set_option -write_apr_constraint 1
+
+#set result format/file last
+project -result_file "catena4710-riscv_Implmnt/catena4710-riscv.edf"
+impl -active catena4710-riscv_Implmnt
+project -run synthesis -clean
