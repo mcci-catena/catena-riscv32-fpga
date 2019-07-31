@@ -39,7 +39,7 @@ Several peripherals are built into this microcontroller.
 <!--markdownlint-restore -->
 ## Introduction
 
-The SOC FPGA Design for the Catena 4470 adds a variety of built-in peripherals: two UARTs, I2C, SPI, and GPIO support for software running on the RISC-V core.
+The SOC FPGA Design for the Catena 4710 adds a variety of built-in peripherals: two UARTs, I2C, SPI, and GPIO support for software running on the RISC-V core.
 
 The design is a little unusual in a couple of ways.
 
